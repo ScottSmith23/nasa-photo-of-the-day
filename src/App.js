@@ -1,21 +1,19 @@
 import React from "react";
 import "./App.css";
 import MainComp from "./components/mainComp";
-// function App() {
-//   return (
-//     <div className="App">
-//       <p>
-//         Read through the instructions in the README.md file to build your NASA
-//         app! Have fun 🚀!
-//       </p>
-//     </div>
-//   );
-// }
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styled from "styled-components";
+const SpaceHeader = styled.h2`
+font-family: 'Titillium Web', sans-serif;
+
+`
+
 function App() {
   return (
     <div className="App">
+      <img src="./img/nasaLogo.png" alt="Nasa Logo" />
       <h1>NASA</h1>
-      <h2>Astronomy Picture of the Day</h2>
+      <SpaceHeader>Astronomy Picture of the Day</SpaceHeader>
     <MainComp />
     </div>
   );

@@ -19,11 +19,11 @@ export default function MainComp() {
         console.log(newFormat);
         setNewDate(newFormat);
     }
-
-    function submitDate(event){
-
-        setNewDate(getnewDate);
-        event.preventDefault();
+    function getDatetyped(e){
+      setNewDate(e);
+    }
+    function submitDate(e){
+        console.log("getnewDate");
     }
     useEffect(() => {
         axios
@@ -39,7 +39,7 @@ export default function MainComp() {
       }, [newDate]);
       return (
         <div className="container">
-        <NewDate changeDate={changeDate} submitDate={submitDate}/>
+        <NewDate getDate={getDatetyped} changeDate={changeDate} submitDate={submitDate}/>
         <ImageComp imgUrl={imgUrl} />
         <DescripComp titleC={title} descripC={description} dateC={date} />
         
