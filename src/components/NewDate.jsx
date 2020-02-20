@@ -1,6 +1,6 @@
-// You do not need to do anything in this file
 import React from 'react';
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const NewDate = props => {
 
   return (
@@ -13,7 +13,11 @@ const NewDate = props => {
         onChange={(e)=>{props.changeDate(e.target.value)}}
         
       />
+      <DatePicker
+        onSelect={(e)=>{props.changeDate(e)}}
+/>
     </form>
+    
   );
 };
 

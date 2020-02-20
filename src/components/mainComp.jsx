@@ -3,6 +3,7 @@ import axios from "axios";
 import ImageComp from "./imageComp";
 import DescripComp from "./descripComp";
 import NewDate from "./NewDate";
+import * as moment from 'moment';
 export default function MainComp() {
     const [title,setTitle] = useState();
     const [date,setDate] = useState();
@@ -11,7 +12,12 @@ export default function MainComp() {
     const [newDate,setNewDate] = useState(`2020-02-16`);
     const [getnewDate,setgetnewDate] = useState();
     function changeDate(e){
-        setgetnewDate(e);
+        var str = `${e}`;
+        var res = str.slice(4, 15);
+    var newFormat = moment(res,"MMM DD YYYY").format("YYYY-MM-DD");
+        console.log(res);
+        console.log(newFormat);
+        setNewDate(newFormat);
     }
 
     function submitDate(event){
