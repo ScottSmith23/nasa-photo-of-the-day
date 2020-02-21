@@ -23,6 +23,7 @@ export default function MainComp() {
     const [newDate,setNewDate] = useState(moment().format("YYYY-MM-DD"));
     const [getnewDate,setgetnewDate] = useState();
     function changeDate(e){
+        console.log(e)
         var str = `${e}`;
         var res = str.slice(4, 15);
     var newFormat = moment(res,"MMM DD YYYY").format("YYYY-MM-DD");
