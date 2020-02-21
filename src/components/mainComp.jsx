@@ -4,12 +4,23 @@ import ImageComp from "./imageComp";
 import DescripComp from "./descripComp";
 import NewDate from "./NewDate";
 import * as moment from 'moment';
+import styled from "styled-components";
+const BackDiv = styled.div`
+
+
+
+`
+const DescDiv = styled.div`
+
+border-radius:20px;
+padding-top:30px;
+`
 export default function MainComp() {
     const [title,setTitle] = useState();
     const [date,setDate] = useState();
     const [description,setDescription] = useState('placeDesc');
     const [imgUrl,setImgUrl] = useState();
-    const [newDate,setNewDate] = useState(`2020-02-16`);
+    const [newDate,setNewDate] = useState(moment().format("YYYY-MM-DD"));
     const [getnewDate,setgetnewDate] = useState();
     function changeDate(e){
         var str = `${e}`;
@@ -38,12 +49,14 @@ export default function MainComp() {
           .catch(error => [console.log(`nope`, error)]);
       }, [newDate]);
       return (
-        <div className="container">
+        <BackDiv className="container">
         <NewDate getDate={getDatetyped} changeDate={changeDate} submitDate={submitDate}/>
+    
         <ImageComp imgUrl={imgUrl} />
+        <DescDiv>
         <DescripComp titleC={title} descripC={description} dateC={date} />
-        
-        </div>
+        </DescDiv>
+        </BackDiv>
       );
 
 }

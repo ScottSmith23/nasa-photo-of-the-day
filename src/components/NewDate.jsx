@@ -1,8 +1,8 @@
-import React from 'react';
+import React,{useState} from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 const NewDate = props => {
-
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <form className="date-form" >
       {/* <input
@@ -15,7 +15,9 @@ const NewDate = props => {
       /> */}
       <DatePicker
         onSelect={(e)=>{props.changeDate(e)}}
-/>
+        selected={startDate} 
+        onChange={date => setStartDate(date)}
+            />
     </form>
     
   );

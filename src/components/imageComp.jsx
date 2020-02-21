@@ -12,7 +12,8 @@ const SpaceImg = styled.img`
 object-fit: scale;
   flex-shrink: 2;
   border-radius:20px;
-
+  width: 100%;
+  height: 100%;
 `
 
 const ImageComp = props => {
